@@ -16,20 +16,20 @@
 <meta property="og:description" content="With the blessings of our elders and the grace of God, we invite you to celebrate our wedding. Join us as we begin our forever together.">
 
 <!-- IMPORTANT: Real image -->
-<meta property="og:image" content="https://venkatesh-bhavana-wedding.vercel.app/images/venkatesh-bhavana-preview.jpeg">
+<meta property="og:image" content="https://venkatesh-bhavana-wedding.vercel.app/images/venkatesh-bhavana-preview.jpg">
 
 <!-- Image size (boosts preview quality) -->
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
 <!-- Optional but powerful -->
-<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:type" content="image/jpg">
 
 <!-- Twitter (also used by some apps) -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="Venkatesh ❤️ Bhavana | Wedding Invitation">
 <meta property="twitter:description" content="We invite you to celebrate our wedding and bless us on our special day.">
-<meta property="twitter:image" content="https://wedding-invitation-olive-five.vercel.app/images/venkatesh-bhavana-preview.jpeg">
+<meta property="twitter:image" content="https://wedding-invitation-olive-five.vercel.app/images/venkatesh-bhavana-preview.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -265,7 +265,8 @@ body{
 /* Ganesha */
 .ganesha-img{
   width:min(180px,45vw);
-  margin-bottom:10px;
+   margin-top:10px;
+  margin-bottom:6px;
   animation:floatY 4s ease-in-out infinite;
   filter:drop-shadow(0 8px 20px rgba(200,146,26,.3));
 }
@@ -299,8 +300,11 @@ body{
 }
 .cover-amp{
   font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:32px;color:rgba(200,146,26,.6);
+  font-size:26px;color:rgba(200,146,26,.6);
   display:block;margin:4px 0;
+   margin:0;
+ 
+  opacity:0.6;
 }
 .cover-date{
   font-family:'Cinzel',serif;font-size:12px;letter-spacing:.14em;
@@ -495,8 +499,24 @@ body{
   margin:0 12px;align-self:center;
 }
 .couple-row{
-  display:flex;align-items:center;justify-content:center;
-  flex-wrap:wrap;gap:8px;margin-top:8px;
+  display:flex;
+  align-items:flex-start;   /* 🔥 KEY FIX */
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+  margin-top:8px;
+}
+
+.person-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+
+  min-height:260px;   /* 🔥 adjust if needed */
+}
+.person-name{
+  min-height:24px;
 }
 
 /* Twin elephants */
@@ -956,6 +976,10 @@ body{
   opacity:0.6;
 }
 
+.person-parents{
+  min-height:60px;
+}
+
 /* ✨ ampersand glow */
 .couple-amp-big{
   animation:ampGlow 2.5s ease-in-out infinite;
@@ -1044,34 +1068,40 @@ section{
 }
 
 .cover-name{
-  font-family:'Cinzel',serif;
   display:flex;
-  justify-content:center;
-  align-items:baseline;   /* 🔥 KEY FIX */
-  gap:8px;
+  align-items:baseline;
+  gap:6px;
 
-  font-size:min(42px,10vw);
-  font-weight:700;
-
-  background:linear-gradient(135deg,#B87010,#E8B84B 40%,#FAC75A 55%,#E8B84B 70%,#B87010);
-  -webkit-background-clip:text;
-
-}
-
-
-.prefix{
-  font-size:0.5em;
-  opacity:0.8;
-  letter-spacing:0.05em;
-  /* 🔥 FORCE VISIBILITY */
-  -webkit-text-fill-color:#E8B84B;
-  background:none;
+  font-family:'Cinzel',serif;
 }
 
 .main-name{
   background:linear-gradient(135deg,#B87010,#E8B84B 40%,#FAC75A 55%,#E8B84B 70%,#B87010);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+}
+
+.prefix{
+  font-size:0.42em;
+  opacity:0.65;
+  letter-spacing:0.06em;
+
+  position:relative;
+  top:-2px;
+  margin-right:2px;
+
+  /* 🔥 THIS IS THE REAL FIX */
+  background:none !important;
+  -webkit-background-clip:initial !important;
+  -webkit-text-fill-color:#E8B84B !important;
+}
+
+.main-name{
+  background:linear-gradient(135deg,#B87010,#E8B84B 40%,#FAC75A 55%,#E8B84B 70%,#B87010);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  letter-spacing:0.08em;
+  font-weight:600; /* instead of 700 */
 }
 
 .map-container{
@@ -1123,11 +1153,11 @@ section{
 }
 
    .cover-quote{
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 
 .cover-name{
-  margin:6px 0;
+  margin:8px 0;
 }
 
    @media (max-width:768px){
@@ -1136,6 +1166,36 @@ section{
   .mandala-corner{
     animation:none !important;
   }
+}
+
+.family-section{
+  background:#FFF8EC;
+  padding:32px 18px;
+  text-align:center;
+}
+
+.family-photo-wrap{
+  margin-top:14px;
+  border-radius:12px;
+  overflow:hidden;
+  border:2px solid rgba(200,146,26,0.3);
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.family-photo-wrap img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+
+.family-photo-wrap img{
+  transition:transform .5s ease;
+}
+
+.family-photo-wrap:hover img{
+  transform:scale(1.05);
 }
 </style>
 </head>
@@ -1251,7 +1311,7 @@ AVNR GARDENS · KOLANUPAKA
           src="images/assets/marigold-wreath.png"
           alt="" loading="lazy">
         <div class="person-photo">
-          <img src="images/venkatesh.jpeg" alt="Venkatesh">
+          <img src="images/venkatesh.jpg" alt="Venkatesh">
             </div>
        </div>
         <p class="person-name">Venkatesh</p>
@@ -1268,7 +1328,7 @@ AVNR GARDENS · KOLANUPAKA
           src="images/assets/marigold-wreath.png"
           alt="" loading="lazy">
         <div class="person-photo">
-          <img src="images/bhavana.jpeg" alt="Bhavana">
+          <img src="images/bhavana.jpg" alt="Bhavana">
         </div>
         </div>
         <p class="person-name">Bhavana</p>
@@ -1293,6 +1353,14 @@ Smt. Akula Sharadha<br>
     Smt. Jally Bhagayyagari Sarojana<br>
     Sri Jally Bhagayyagari Laxminarayana
   </p>
+</section>
+
+<section class="family-section reveal-section">
+  <p class="section-heading">Our Family</p>
+
+  <div class="family-photo-wrap">
+    <img src="images/family.jpg" alt="Family Photo">
+  </div>
 </section>
 
   <!-- ── TORAN ROW 2 ── -->
@@ -1359,23 +1427,23 @@ View Location
     <p class="section-heading" style="text-align:center;">Captured Moments</p>
     <div class="gold-divider"></div>
     <div class="gallery-grid">
-      <div class="gallery-cell" onclick="openLightbox('https://images.unsplash.com/photo-1609501676725-7186f017a4b7?w=800&auto=format')">
-        <img src="https://images.unsplash.com/photo-1609501676725-7186f017a4b7?w=400&h=400&fit=crop&auto=format" alt="Wedding photo 1" loading="lazy">
+      <div class="gallery-cell" onclick="openLightbox('images/gallery1.jpg')">
+        <img src="images/gallery1.jpg" alt="Wedding photo 1" loading="lazy">
       </div>
-      <div class="gallery-cell" onclick="openLightbox('https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&auto=format')">
-        <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=400&h=400&fit=crop&auto=format" alt="Wedding photo 2" loading="lazy">
+      <div class="gallery-cell" onclick="openLightbox('images/gallery3.jpg')">
+        <img src="images/gallery3.jpg" alt="Wedding photo 2" loading="lazy">
       </div>
-      <div class="gallery-cell" onclick="openLightbox('https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&auto=format')">
-        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&h=400&fit=crop&auto=format" alt="Wedding photo 3" loading="lazy">
+      <div class="gallery-cell" onclick="openLightbox('images/gallery6.jpg')">
+        <img src="images/gallery6.jpg" alt="Wedding photo 3" loading="lazy">
       </div>
-      <div class="gallery-cell" onclick="openLightbox('https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format')">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=400&fit=crop&auto=format" alt="Wedding photo 4" loading="lazy">
+      <div class="gallery-cell" onclick="openLightbox('images/gallery4.jpg')">
+        <img src="images/gallery4.jpg" alt="Wedding photo 4" loading="lazy">
       </div>
-      <div class="gallery-cell" onclick="openLightbox('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&auto=format')">
-        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&h=400&fit=crop&auto=format" alt="Wedding photo 5" loading="lazy">
+      <div class="gallery-cell" onclick="openLightbox('images/gallery5.jpg')">
+        <img src="images/gallery5.jpg" alt="Wedding photo 5" loading="lazy">
       </div>
-      <div class="gallery-cell" onclick="openLightbox('https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&auto=format')">
-        <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=400&h=400&fit=crop&auto=format" alt="Wedding photo 6" loading="lazy">
+      <div class="gallery-cell" onclick="openLightbox('images/engagement-cake.jpg')">
+        <img src="images/engagement-cake.jpg" alt="Wedding photo 6" loading="lazy">
       </div>
     </div>
   </section>
@@ -1432,7 +1500,7 @@ Yadadri Bhuvanagiri District
 </div><!-- /invitation -->
 
 <audio id="bg-music" loop>
-  <source src="images/assets/pelli-song.mp3" type="audio/mp3">
+  <source src="images/assets/priya-mithunam_6yV4KG3b.mp3" type="audio/mp3">
 </audio>
 
 <button id="music-btn" style="
